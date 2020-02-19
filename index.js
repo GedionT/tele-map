@@ -1,8 +1,12 @@
+require('dotenv').config();
 var TelegramBot = require('node-telegram-bot-api');
 
-const telegram = new TelegramBot("BOTOKEN", { polling: true });
+// token to be moved to .env file
+const token = process.env.TOKEN
 
-telegram.on('text', (message) => {
+const bot = new TelegramBot(token, { polling: true });
+
+bot.on('text', (message) => {
 
 	if(message.text.toLowerCase().indexOf("/start") === 0) {
 		parse_mode: "Markdown"

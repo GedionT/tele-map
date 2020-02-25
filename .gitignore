@@ -1,2 +1,6 @@
 node_modules/
 .now
+
+
+
+$ curl -F "url=https://tele-map.now.sh/" https://api.telegram.org/bot942452933:AAHUEB27q2sS24jaOWQP5SpPg4pHqE_S9IY/setWebhook

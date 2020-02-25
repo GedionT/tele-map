@@ -6,6 +6,7 @@ const axios 	= require('axios');
 app.use(bodyParser.json()); // for parsing application/json
 app.use(bodyParser.urlencoded({ extended: true })); // for parsing application/x-www-form-urlencoded
 
+const token = process.env.TOKEN;
 //This is the route the API will call
 app.post('/', (req, res) => {
   const message = req.body.message;
@@ -21,7 +22,7 @@ app.post('/', (req, res) => {
   // Remember to use your own API toked instead of the one below  "https://api.telegram.org/bot<your_api_token>/sendMessage"
   axios
     .post(
-      'https://api.telegram.org/bot942452933:AAHUEB27q2sS24jaOWQP5SpPg4pHqE_S9IY/sendMessage',
+      `https://api.telegram.org/bot${token}/sendMessage`,
       {
         chat_id: message.chat.id,
         text: 'Polo!!'
